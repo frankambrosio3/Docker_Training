@@ -155,7 +155,7 @@ To test let's run the StaPH-B NCBI `datasets` docker container and create some f
 
 ```bash
 # change directories so that we have a relatively clean working environment
-cd training/
+cd training/GT-Comp-Genomics-Docker-for-PH-Bioinformatics-Jan2024/
 
 # launch the container in interactive mode
 docker run -it staphb/ncbi-datasets:14.20.0
