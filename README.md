@@ -232,7 +232,7 @@ Let's launch the `datasets` docker image interactively, and use the flags you le
 # -v is for mounting my filesystem to the container filesystem
 # -u is for passing in my user ID and group ID
 # -it is 2 flags for launching interactive mode
-docker run --rm -v $PWD:/data -u $(id -u):$(id -g) -it staphb/ncbi-datasets:14.20.0
+docker run --rm -v $PWD:/data -it staphb/ncbi-datasets:14.20.0
 
 # run the datasets tool to download the FASTA file (along with some other metadata)
 datasets download genome accession GCF_000240185.1
