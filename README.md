@@ -173,28 +173,6 @@ whoami
 exit
 ```
 
-Now let's launch the container in interactive mode, but pass in our user and group id. Instead of looking up your user and group IDs, you can look up these IDs on-the-fly with `id -u` and `id -g`
-
-```bash
-# launch the container in interactive mode again, but this time pass in our user and group IDs
-docker run -u $(id -u):$(id -g) -it staphb/ncbi-datasets:14.20.0
-
-# change to /tmp
-cd /tmp
-
-# create a file called "test.txt"
-touch test.txt
-
-# look at the permissions for this file
-ls -lh
-
-# see what the current user you're logged in as
-whoami
-
-# exit the container with the command 'exit'. Your command prompt should go back to it's default
-exit
-```
-
 #### Passing files in and out of containers
 
 Docker containers have filesystems that are completely separate and isolated from your host computer's filesystem. You can mount a "volume" between your host computer's filesystem and the container filesystem to pass files in and out.
