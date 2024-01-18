@@ -284,7 +284,7 @@ docker build --tag <name>:<tag> <directory-with-dockerfile>
 Now with real values filled in, run the following command:
 
 ```bash
-docker build --tag ncbi-datasets:14.20.0 ncbi-datasets/14.20.0/
+docker build --tag ncbi-datasets:14.20.0 /workspace/docker-builds/ncbi-datasets/14.20.0/
 ```
 
 What happened when we ran this command?
@@ -298,7 +298,7 @@ When we ran the previous command, it built all stages of the dockerfile. BUT we 
 
 ```bash
 # note the new option '--target test'
-docker build --target test --tag ncbi-datasets:14.20.0-test-stage ncbi-datasets/14.20.0/
+docker build --target test --tag ncbi-datasets:14.20.0-test-stage /workspace/docker-builds/ncbi-datasets/14.20.0/
 ```
 
 That command finished running almost instantaneously, why?
@@ -314,7 +314,7 @@ Now lets build to only the `app` stage, as this will be the final docker image t
 
 ```bash
 # note the new option '--target app'
-docker build --target app --tag ncbi-datasets:14.20.0-app-stage ncbi-datasets/14.20.0/
+docker build --target app --tag ncbi-datasets:14.20.0-app-stage /workspace/docker-builds/ncbi-datasets/14.20.0/
 ```
 
 ### SPAdes
@@ -325,14 +325,14 @@ Let's build the most recent version of SPAdes, but this time start with only bui
 
 ```bash
 # note the new option '--target app'
-docker build --target app --tag spades:3.15.5-app-stage spades/3.15.5/
+docker build --target app --tag spades:3.15.5-app-stage /workspace/docker-builds/spades/3.15.5/
 ```
 
 Now let's build all the way through the `test` stage and see the test assembly process run:
 
 ```bash
 # note the new option '--target test'
-docker build --target test --tag spades:3.15.5-test-stage spades/3.15.5/
+docker build --target test --tag spades:3.15.5-test-stage /workspace/docker-builds/spades/3.15.5/
 ```
 
 ### Experiment
@@ -361,7 +361,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y python3 \
 
 ```bash
 # same command as before, but now with an updated dockerfile
-docker build --target test --tag spades:3.15.5-test-stage-unzip-added spades/3.15.5/
+docker build --target test --tag spades:3.15.5-test-stage-unzip-added /workspace/docker-builds/spades/3.15.5/
 ```
 
 5. Launch an interactive container to see if `unzip` is actually installed:
